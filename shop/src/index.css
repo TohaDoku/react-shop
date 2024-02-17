@@ -22,6 +22,22 @@ header .logo {
   font-size: 20px;
 }
 
+header ul.nav {
+  float: right;
+  list-style: none;
+}
+
+header ul.nav li {
+  display: inline;
+  margin-left: 25px;
+  cursor: pointer;
+  transition: opacity 500ms ease;
+}
+
+header ul.nav li:hover {
+  opacity: 0.5;
+}
+
 header .presentation {
   margin: 50px 0;
   background: url('./img/bg.jpg') no-repeat;
@@ -54,6 +70,62 @@ header .presentation::before {
   font-size: 15px;
   font-weight: 300;
   color: #fff;
+}
+
+main {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+main .item {
+  width: 30%;
+  margin-bottom: 50px;
+  background: #f5f5f5;
+  overflow: hidden;
+  position: relative;
+  padding-bottom: 20px;
+}
+
+main .item img {
+  width: 100%;
+  border-radius: 10px 10px 0 0;
+  transition: scale 500ms ease;
+  height: 320px;
+}
+
+main .item img:hover {
+  scale: 1.05;
+}
+
+main h2, main p, main b {
+  margin: 10px 20px;
+  color: #333;
+}
+
+main b {
+  color: #5fa36a;
+}
+
+main .add-to-cart {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background: #ca5252;
+  width: 35px;
+  height: 35px;
+  text-align: center;
+  line-height: 35px;
+  color: #fff;
+  border-radius: 50%;
+  cursor: pointer;
+  font-weight: 600;
+  transition: transform 500ms ease;
+}
+
+main .add-to-cart:hover {
+  transform: scale(1.05) translateY(-5px);
 }
 
 footer {
