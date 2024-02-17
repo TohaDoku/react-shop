@@ -121,9 +121,30 @@ header .shop-cart .item p {
   font-weight: 600;
 }
 
-heder .show-cart .empty h2 {
+header .shop-cart .empty h2 {
   font-size: 20px;
   margin-bottom: 20px;
+}
+
+header .shop-cart .item .delete-icon {
+  float: right;
+  color: #ca5252;
+  position: relative;
+  top: -25px;
+  cursor: pointer;
+  transition: all 500ms ease; 
+}
+
+header .shop-cart .item .delete-icon:hover {
+  color: #d83030;
+  transform: scale(1.5);
+}
+
+header .shop-cart .sum {
+  float: left;
+  width: 100%;
+  font-weight: 600;
+  font-size: 20px;
 }
 
 main {
