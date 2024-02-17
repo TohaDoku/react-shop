@@ -7,6 +7,7 @@ class App extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
+      orders: [],
       items: [
         {id: 1, title: "Стул серый", img: "1.jpg", description: "Этот серый стул станет идеальным дополнением к вашему интерьеру.", category: "chairs", price: "49.99"},
         {id: 2, title: "Стол обеденный", img: "2.jpg", description: "Прекрасный обеденный стол для уютных ужинов", category: "tables", price: "199.99"},
@@ -19,16 +20,28 @@ class App extends React.Component {
         {id: 9, title: "Стул-качалка", img: "9.jpg", description: "Уютный стул-качалка для релакса и отдыха", category: "chairs", price: "79.99"}
       ]
     }
+    this.addToOrder = this.addToOrder.bind(this)
   }
   render() {
     return (
       <div className="wrapper">
-        <Header/>
-        <Items items={this.state.items} />
+        <Header orders={this.state.orders} />
+        <Items items={this.state.items} onAdd={this.addToOrder} />
         <Footer/>
       </div>
     );
-  } 
+  }
+  
+  addToOrder(item) {
+    let isInArray = false
+    this.state.orders.forEach(el => {
+      if(el.id === item.id)
+        isInArray = true
+    })
+    if(!isInArray)
+      this.setState({ orders: [...this.state.orders, item] }, () => {
+    })
+  }
 }
 
 export default App;
